@@ -23,7 +23,7 @@ export default function GameCard() {
                             className='game-card-img'
                             />
                             <CardContent className='game-content'>
-                                <Typography gutterBottom variant="h5" component="div" >
+                                <Typography gutterBottom variant="h5" component="div" className='game-name' >
                                     Tic Tac Toe
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" className='game-description'>

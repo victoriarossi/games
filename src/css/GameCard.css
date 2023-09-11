@@ -37,3 +37,7 @@
 .games-list{
     margin: 5%;
 }
+
+.game-name{
+    color: black !important;
+}
