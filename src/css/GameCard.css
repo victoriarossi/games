@@ -1,0 +1,39 @@
+/* .game-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.game-card-img{
+    width: 60% !important;
+    display: inline-flex !important;
+}
+
+.game-content{
+    display: flex !important;
+    flex-flow: column;
+    align-items: center;
+    padding: 6% !important;
+    margin-top: -5%;
+}
+
+.no-underline{
+    text-decoration: none !important;
+}
+
+.game-card{
+    max-width: 20%;
+}
+
+.game-card-area{
+    display: flex !important;
+    flex-flow: column;
+}
+
+.game-description{
+    text-align: justify;
+}
+
+.games-list{
+    margin: 5%;
+}
