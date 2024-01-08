@@ -8,6 +8,8 @@ export default function Sudoku() {
     const [board, setBoard] = useState(Array(9).fill().map(()=>Array(9).fill(null)));
     const [start, setStart] = useState(true);
 
+    const [boardNumber, setBoardNumber] = useState(0);
+
     useEffect(() => {
       if (start) {
         loadSudokuBoard();
@@ -16,13 +18,15 @@ export default function Sudoku() {
     }, [start]);
 
     function loadSudokuBoard() {
-        const sample = require('./sudoku_board.json'); 
-        console.log(sample.board);
+        const sample = require('../server/sudoku_board.json');
+        let index = getRandomInt();
+        setBoardNumber(index);
+        const board = sample.boards[index];
         const newBoard = [...board];
         for (let i = 0; i < 9; i++) {
             for(let j = 0; j < 9; j++){
-                if(sample.board[i][j] !== 0){
-                    newBoard[i][j] = sample.board[i][j];
+                if(board[i][j] !== 0){
+                    newBoard[i][j] = board[i][j];
                 } else {
                     newBoard[i][j] = null;
                 }
@@ -41,6 +45,11 @@ export default function Sudoku() {
           </button>
         );
       }
+
+    function getRandomInt() {
+        return Math.floor(Math.random() * 20);
+    }
+      
     
     function handleSquareClick(row, col) {
         // Implement adding a number to the board
@@ -53,6 +62,7 @@ export default function Sudoku() {
             </Link>
             <Header name="Sudoku" />
             <div className='game'>
+            <button className="generate-board-btn" onClick={loadSudokuBoard}>Generate new board</button>
                 <div className="board">
                     <div className="board-col">
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(row => (

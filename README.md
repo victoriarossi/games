@@ -20,6 +20,12 @@ cd gamehub
 npm install
 ```
 
+3. Create games boards:
+Make sure you have python installed.
+```
+python ./src/server/generate_sudoku.py
+```
+
 ### Usage
 Start the app:
 

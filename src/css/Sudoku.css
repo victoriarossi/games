@@ -48,9 +48,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-left: 20%;
+    margin-left: 10%;
     /* border: 1px solid black; */
-    width: 60%;
+    width: 80%;
     margin-top: 2%;
 }
 
@@ -74,5 +74,18 @@
 .rows{
     display: flex;
     flex-direction: row;
+}
+
+.generate-board-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #DFDFDF;
+    border: none;
+    font-size: 20px;
 }
 
