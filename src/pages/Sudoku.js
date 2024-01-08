@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import '../css/Sudoku.css';
 import { Link } from "react-router-dom";
+import _ from 'lodash'; // Import lodash library for deep copy
 
 export default function Sudoku() {
     const [board, setBoard] = useState(Array(9).fill().map(() => Array(9).fill(null)));
     const [start, setStart] = useState(true);
     const [boardNumber, setBoardNumber] = useState(0);
+    const [numberClicked, setNumberClicked] = useState(null);
+
+    const sample = require('../server/sudoku_board.json');
+    const solutions = sample.solutions;
+    const originalBoard = useRef(_.cloneDeep(sample.boards[boardNumber]));
 
     useEffect(() => {
         if (start) {
@@ -20,7 +26,7 @@ export default function Sudoku() {
     }, [boardNumber]);
 
     function loadSudokuBoard() {
-        const sample = require('../server/sudoku_board.json');
+        
         const board = sample.boards[boardNumber];
         const newBoard = [...board];
         for (let i = 0; i < 9; i++) {
@@ -33,6 +39,8 @@ export default function Sudoku() {
             }
         }
         setBoard(newBoard);
+        console.log("Original board")
+        console.log(originalBoard);
     }
 
     function getRandomInt() {
@@ -48,7 +56,7 @@ export default function Sudoku() {
     }
 
     function renderSquare(row, col) {
-        const isPredefined = (board[row][col] !== null);
+        const isPredefined = (originalBoard.current[row][col] !== 0);
         const squareClass = isPredefined ? 'predefined-square' : 'square';
 
         return (
@@ -57,9 +65,19 @@ export default function Sudoku() {
             </button>
         );
     }
+
+    function handleNumberClick(number) {
+        setNumberClicked(number);
+    }
     
     function handleSquareClick(row, col) {
         // Implement adding a number to the board
+        const isPredefined = (originalBoard.current[row][col] !== 0);
+        if (numberClicked !== null && !isPredefined) {
+            const newBoard = [...board];
+            newBoard[row][col] = numberClicked;
+            setBoard(newBoard);
+        }
     }
 
     return (
@@ -83,7 +101,7 @@ export default function Sudoku() {
                     <div className="rows"> 
                     {[1, 2, 3].map((number, index) => (
                         <React.Fragment key={number}>
-                        <button className="number" onClick={() => {}}>
+                        <button className="number" onClick={() => {handleNumberClick(number)}}>
                             {number}
                         </button>
                         </React.Fragment>
@@ -92,7 +110,7 @@ export default function Sudoku() {
                     <div className="rows"> 
                     {[4, 5, 6].map((number, index) => (
                         <React.Fragment key={number}>
-                        <button className="number" onClick={() => {}}>
+                        <button className="number" onClick={() => {handleNumberClick(number)}}>
                             {number}
                         </button>
                         </React.Fragment>
@@ -101,7 +119,7 @@ export default function Sudoku() {
                     <div className="rows"> 
                     {[7, 8, 9].map((number, index) => (
                         <React.Fragment key={number}>
-                        <button className="number" onClick={() => {}}>
+                        <button className="number" onClick={() => {handleNumberClick(number)}}>
                             {number}
                         </button>
                         </React.Fragment>

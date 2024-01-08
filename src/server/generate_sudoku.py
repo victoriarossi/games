@@ -48,7 +48,7 @@ def generate_sudoku():
         row, col = np.random.randint(0, 9, size=2)
         puzzle[row, col] = 0
 
-    return puzzle
+    return (puzzle, board)
 
 def print_sudoku(board):
     for row in board:
@@ -61,9 +61,12 @@ def print_sudoku(board):
 #         print_sudoku(sudoku_board)
 #         print("\n" + "=" * 20 + "\n")
 if __name__ == "__main__":
-    sudokus = []
+    sudokus = {}
+    sudokus["boards"] = []
+    sudokus["solutions"] = []
     for number in range(20):
-        sudoku_board = generate_sudoku()
-        sudokus.append(sudoku_board.tolist())
+        sudoku_board,sudoku_solved = generate_sudoku()
+        sudokus["boards"].append(sudoku_board.tolist())
+        sudokus["solutions"].append(sudoku_solved.tolist())
     with open('sudoku_board.json', 'w') as json_file:
-        json.dump({"boards": sudokus}, json_file)
+        json.dump(sudokus, json_file)
