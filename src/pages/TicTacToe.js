@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState('X');
-  const [players, setPlayers] = useState(2);
+  const [players, setPlayers] = useState(2); // 1 = one player, 2 = two players. Default: 2
   let end = false;
 
   function makeMove(id) {
@@ -58,12 +58,12 @@ export default function TicTacToe() {
   if (winner) {
     status = " ";
     end = true;
-  gameover = (
-    <React.Fragment>
-      Game Over <br />
-      Winner: {winner}!!!
-    </React.Fragment>
-  );
+    gameover = (
+      <React.Fragment>
+        Game Over <br />
+        Winner: {winner}!!!
+      </React.Fragment>
+    );
   } else if (!board.includes(null)) {
     status = ' ';
     end = true;
