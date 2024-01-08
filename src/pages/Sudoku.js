@@ -9,10 +9,13 @@ export default function Sudoku() {
     const [start, setStart] = useState(true);
     const [boardNumber, setBoardNumber] = useState(0);
     const [numberClicked, setNumberClicked] = useState(null);
+    let end = false;
+    let status;
+    let gameover;
 
     const sample = require('../server/sudoku_board.json');
     const solutions = sample.solutions;
-    const originalBoard = useRef(_.cloneDeep(sample.boards[boardNumber]));
+    let originalBoard = useRef(_.cloneDeep(sample.boards[boardNumber]));
 
     useEffect(() => {
         if (start) {
@@ -52,6 +55,7 @@ export default function Sudoku() {
         while (index === boardNumber) {
             index = getRandomInt();
         }
+        originalBoard.current = _.cloneDeep(sample.boards[index]);
         setBoardNumber(index);
     }
 
@@ -78,6 +82,35 @@ export default function Sudoku() {
             newBoard[row][col] = numberClicked;
             setBoard(newBoard);
         }
+    }
+
+    // Check if board is solved
+    console.log("Checking if solved")
+    console.log(board)
+    if (isSolved()) {
+        end = true;
+        gameover = (
+            <React.Fragment>
+                Congratulations, 
+                You won!!!
+            </React.Fragment>
+        );
+    }
+
+    function isSolved() {
+        for(let i = 0; i < 9; i++) {
+            for(let j = 0; j < 9; j++){
+                const isPredefined = (originalBoard.current[i][j] !== 0);
+                if(isPredefined)
+                    continue;
+                if(board[i][j] !== solutions[boardNumber][i][j]){
+                    return false;
+                }
+            }
+        }
+        console.log("Solved board")
+        console.log(board);
+        return true;
     }
 
     return (
@@ -125,6 +158,9 @@ export default function Sudoku() {
                         </React.Fragment>
                     ))}
                     </div>
+                    </div>
+                    <div>
+                        {end && <h1 className="game-over">{gameover}</h1>}
                     </div>
             </div>
         </>

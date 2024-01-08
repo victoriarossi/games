@@ -48,10 +48,6 @@ export default function TicTacToe() {
     );
   }
 
-  function setGame(players) {
-    
-  }
-
   const winner = calculateWinner(board);
   let status;
   let gameover;

@@ -39,16 +39,19 @@ def generate_sudoku():
     # Create an empty board
     board = np.zeros((9, 9), dtype=int)
 
+    # Create a copy of the board for solving
+    board_for_solving = board.copy()
+
     # Solve the board
-    solve(board)
+    solve(board_for_solving)
 
     # Randomly remove numbers to create the puzzle
-    puzzle = np.copy(board)
+    puzzle = np.copy(board_for_solving)
     for _ in range(40):  # Adjust the number of removed numbers as needed
         row, col = np.random.randint(0, 9, size=2)
         puzzle[row, col] = 0
 
-    return (puzzle, board)
+    return [puzzle, board_for_solving]
 
 def print_sudoku(board):
     for row in board:
@@ -65,7 +68,9 @@ if __name__ == "__main__":
     sudokus["boards"] = []
     sudokus["solutions"] = []
     for number in range(20):
-        sudoku_board,sudoku_solved = generate_sudoku()
+        sudoku = generate_sudoku()
+        sudoku_board = sudoku[0]
+        sudoku_solved = sudoku[1]
         sudokus["boards"].append(sudoku_board.tolist())
         sudokus["solutions"].append(sudoku_solved.tolist())
     with open('sudoku_board.json', 'w') as json_file:
