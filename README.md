@@ -29,10 +29,10 @@ npm start
 Visit http://localhost:3000 in your browser to access GameHub.
 
 ## Features
-Game Selection: Choose from a variety of games, including Tic Tac Toe, Sudoku, and more.
-Multiplayer: Enjoy multiplayer games with friends or random opponents.
-Single Player: Test your skills against AI opponents in single-player mode.
+Game Selection: Choose from a variety of games, including Tic Tac Toe, Sudoku, and more.\
+Multiplayer: Enjoy multiplayer games with friends or random opponents.\
+Single Player: Test your skills against AI opponents in single-player mode.\
 
 ## Games Available
-Tic Tac Toe: Classic game of Xs and Os. Play against a friend or challenge the AI.
+Tic Tac Toe: Classic game of Xs and Os. Play against a friend or challenge the AI.\
 Sudoku: Number puzzle game to stimulate your mind. Various difficulty levels available.
