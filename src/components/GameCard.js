@@ -33,6 +33,27 @@ export default function GameCard() {
                         </CardActionArea>
                     </Link>
                 </Card>
+                <Card className='game-card'>
+                    <Link to="/Sudoku" className='no-underline'>
+                        <CardActionArea className='game-card-area'>
+                            <CardMedia
+                            component="img"
+                            style={{maxWidth: 140}}
+                            image="/sudoku.png"
+                            alt="Sudoku"
+                            className='game-card-img'
+                            />
+                            <CardContent className='game-content'>
+                                <Typography gutterBottom variant="h5" component="div" className='game-name' >
+                                    Sudoku
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary" className='game-description'>
+                                    Sudoku is a challenging number puzzle game where players aim to fill a 9x9 grid with digits 1 to 9, ensuring each row, column, and 3x3 subgrid contains every digit without repetition.
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Link>
+                </Card>
         </div>
         </>
     );

@@ -36,6 +36,9 @@
 
 .games-list{
     margin: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 .game-name{
