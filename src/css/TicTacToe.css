@@ -1,6 +1,8 @@
 .board{
-    display: flex;
-    justify-content: center;
+    /* display: relative; */
+    /* justify-content: center; */
+    /* border: none !important; */
+    position: relative;
 }
 
 .board-col{
@@ -8,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .board-row{
@@ -28,4 +30,51 @@
     height: 100px;
     border: 1px solid black;
     font-size: 35px;
+}
+
+.players-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #DFDFDF;
+    border: none;
+}
+
+.select-game{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.back_btn{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3%;
+}
+
+.status{
+    font-size: x-large;
+    margin-left: 15%;
+}
+
+.game-over{
+    position: absolute;
+    top: 10%;
+    left: 41.3%;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
 }
