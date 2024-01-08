@@ -2,3 +2,10 @@
     display: flex;
     justify-content: center;
 }
+
+.games-list{
+    margin: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}

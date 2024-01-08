@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import TicTacToe from "./pages/TicTacToe";
-import Contact from "./pages/Contact"; 
 import Sudoku from "./pages/Sudoku";
+import Hangman from "./pages/Hangman";
+import ConnectFour from "./pages/ConnectFour";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} /> 
           <Route path="/tictactoe" element={<TicTacToe />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/sudoku" element={<Sudoku />} />
+          <Route path="/hangman" element={<Hangman />} />
+          <Route path="/connectfour" element={<ConnectFour />} />
         </Routes>
       </BrowserRouter>
     </div>

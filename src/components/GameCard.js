@@ -8,32 +8,37 @@ import '../css/GameCard.css';
 import { Link } from "react-router-dom";
 
 
-export default function GameCard() {
+export default function GameCard({name, link, img, description}) {
     return (
         <>
-        <div className='games-list'>
-                <Card className='game-card'>
-                    <Link to="/TicTacToe" className='no-underline'>
-                        <CardActionArea className='game-card-area'>
-                            <CardMedia
-                            component="img"
-                            height="140"
-                            image="/tic-tac-toe.jpeg"
-                            alt="Tic Tac Toe"
-                            className='game-card-img'
-                            />
-                            <CardContent className='game-content'>
-                                <Typography gutterBottom variant="h5" component="div" className='game-name' >
-                                    Tic Tac Toe
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" className='game-description'>
-                                    A game in which two players seek in alternate turns to complete a row, a column, or a diagonal with either three O's or three X's drawn in the spaces of a grid of nine squares.
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Link>
-                </Card>
-                <Card className='game-card'>
+            <Card className='game-card'>
+                <Link to={link} className='no-underline'>
+                    <CardActionArea className='game-card-area'>
+                        <CardMedia
+                        component="img"
+                        style={{maxWidth: 140}}
+                        image={img}
+                        alt={name}
+                        className='game-card-img'
+                        />
+                        <CardContent className='game-content'>
+                            <Typography gutterBottom variant="h5" component="div" className='game-name' >
+                                {name}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" className='game-description'>
+                                {description}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Link>
+            </Card>
+        </>
+    );
+}
+
+
+/*
+<Card className='game-card'>
                     <Link to="/Sudoku" className='no-underline'>
                         <CardActionArea className='game-card-area'>
                             <CardMedia
@@ -53,8 +58,4 @@ export default function GameCard() {
                             </CardContent>
                         </CardActionArea>
                     </Link>
-                </Card>
-        </div>
-        </>
-    );
-}
+                </Card>*/
