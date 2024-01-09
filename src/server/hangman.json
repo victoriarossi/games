@@ -1,0 +1,35 @@
+{
+  "easy": [
+    "apple", "banana", "cat", "dog", "elephant", "fish", "grape", "happy", "icecream", "jazz",
+    "kite", "lemon", "mango", "nest", "orange", "pear", "quiet", "rose", "star", "tiger",
+    "umbrella", "volcano", "winter", "xylophone", "yak", "zebra", "sun", "tree", "moon", "cloud",
+    "river", "frog", "bug", "cake", "train", "bird", "book", "chair", "door", "flower", "key",
+    "lamp", "mirror", "hat", "boat", "shoe", "shirt", "pants", "guitar", "piano", "drum"
+  ],
+  "medium": [
+    "blueberry", "whisper", "umbrella", "harmony", "mysterious", "sunflower", "kangaroo",
+    "paradise", "reflection", "whispering", "abracadabra", "serendipity", "crimson", "wanderlust",
+    "breathtaking", "discovery", "effervescent", "inspiration", "landscape", "moonlight",
+    "nightingale", "optimistic", "pomegranate", "quicksilver", "radiance", "solitude", "tranquility",
+    "veracity", "whimsical", "yesterday", "zoologist", "enigmatic", "quizzical", "absolution",
+    "cacophony", "ephemeral", "luminescent", "mellifluous", "nostalgia", "oblivion", "perambulate",
+    "quintessential", "recumbent", "serendipity", "transcendence", "unctuous", "vorfreude",
+    "wanderlust", "xanadu", "yggdrasil", "zeitgeist"
+  ],
+  "hard": [
+    "programming", "javascript", "hangman", "developer", "computer", "gaming", "technology",
+    "pineapple", "elephant", "rainbow", "keyboard", "vacation", "butterfly", "adventure", "galaxy",
+    "chocolate", "happiness", "universe", "waterfall", "zucchini", "sapphire", "exploration",
+    "octopus", "zeppelin", "blueberry", "whisper", "umbrella", "harmony", "mysterious", "sunflower",
+    "kangaroo", "paradise", "reflection", "whispering", "abracadabra", "serendipity", "crimson",
+    "wanderlust", "breathtaking", "discovery", "effervescent", "inspiration", "landscape", "moonlight",
+    "nightingale", "optimistic", "pomegranate", "quicksilver", "radiance", "solitude", "tranquility",
+    "veracity", "whimsical", "yesterday", "zoologist", "enigmatic", "quizzical", "absolution",
+    "cacophony", "ephemeral", "luminescent", "mellifluous", "nostalgia", "oblivion", "perambulate",
+    "quintessential", "recumbent", "serendipity", "transcendence", "unctuous", "vorfreude",
+    "wanderlust", "xanadu", "yggdrasil", "zeitgeist", "archaic", "bohemian", "cosmic", "effulgent",
+    "facetious", "garrulous", "higgledy-piggledy", "impeccable", "juxtapose", "kaleidoscope",
+    "loquacious", "magnanimous", "nonchalant", "obfuscate", "peregrinate", "quizzical", "rhapsody",
+    "serendipity", "talisman", "ubiquitous", "vorfreude", "wanderlust", "xanadu", "yggdrasil", "zeitgeist"
+  ]
+}

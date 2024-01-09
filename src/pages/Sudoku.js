@@ -10,7 +10,6 @@ export default function Sudoku() {
     const [boardNumber, setBoardNumber] = useState(0);
     const [numberClicked, setNumberClicked] = useState(null);
     let end = false;
-    let status;
     let gameover;
 
     const sample = require('../server/sudoku_board.json');
@@ -29,7 +28,6 @@ export default function Sudoku() {
     }, [boardNumber]);
 
     function loadSudokuBoard() {
-        
         const board = sample.boards[boardNumber];
         const newBoard = [...board];
         for (let i = 0; i < 9; i++) {
