@@ -25,12 +25,6 @@ export default function Home(){
                 img='/hangman.png'
                 description="Hangman is a classic word game in which you must guess as many secret words as you can before you run out of lives! Challenge your friends and learn new words, one letter at a time!"
             />
-            <GameCard
-                name='Connect Four'
-                link='/ConnectFour'
-                img='/connectfour.png'
-                description="Connect Four is a two-player connection board game in which the players first choose a color and then take turns dropping colored discs from the top into a seven-column, six-row vertically suspended grid."
-            />
         </div>
         </>
     )
